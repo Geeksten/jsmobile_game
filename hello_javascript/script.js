@@ -1,1 +1,1 @@
-alert("Hello World! I am the external javascript");
+alert("Hello World! I am the external js. I am in the same folder as the html file");
