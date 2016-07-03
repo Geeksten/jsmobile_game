@@ -1,0 +1,35 @@
+<html>
+	<head></head>
+	<body>
+		Adding and Removing Elements from Arrays
+		<script>
+			var weapons = ['sword', 'laser gun', 'stick', 'axe'];
+
+			//array length
+			console.log(weapons.length)
+
+			//push()
+			weapons.push('knife', 'laser knife');
+			console.log(weapons) //["sword", "laser gun", "stick", "axe", "knife", "laser knife"]
+
+			//pop()
+			weapons.pop();
+			console.log(weapons)//["sword", "laser gun", "stick", "axe", "knife"]
+
+			weapons.push('laser knife');
+			console.log(weapons)//["sword", "laser gun", "stick", "axe", "knife", "laser knife"]
+			
+			//splice()
+			//splice(indexOfFirstElement, NumberOfElementsToRemove)
+			weapons.splice(1,3);
+			console.log(weapons)//["sword", "knife", "laser knife"]
+
+			//splice(indexOfFirstElement, NumberOfElementsToRemove,elementToAdd1,elementToAdd2...elementToAddN)
+			weapons.splice(1, 0, 'bomb', 'bow and arrow');
+			console.log(weapons);//["sword", "bomb", "bow and arrow", "knife", "laser knife"]
+
+			// console.log(weapons);
+
+		</script>
+	</body>
+</html>
