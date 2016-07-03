@@ -1,0 +1,24 @@
+<html>
+	<head></head>
+	<body>
+		Nested Functions
+		<script>
+
+			function showEverywhere(text) {
+
+				function decorate(a) {
+					return "###---" + a + "---###";
+				};
+
+				text = decorate(text);
+
+				console.log(text);
+				alert(text);
+			};
+
+			// decorate('ciao')//cannot use ciao outside of showEverywhere, its scope is within the parent function
+			showEverywhere("Hello World");
+
+		</script>
+	</body>
+</html>
