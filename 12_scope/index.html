@@ -1,0 +1,28 @@
+<html>
+	<head></head>
+	<body>
+		Scope
+		<script>
+
+			//variables factor and c are in the global scope
+			var factor = 100;
+			var c = 1;
+
+			//variable c has a local scope inside the function converter
+			//by declaring var c = m * factor; then we declare a new variable inside the function
+			//if we would have just used c = m * factor; then this would have been the global c
+			//1 meter is 100 cm
+			function converter(m) {
+				var c = m * factor;
+				return c;
+			}
+
+			console.log(c); //will print out the global variable c
+
+			var result = converter(10);
+			console.log(result);
+
+
+		</script>
+	</body>
+</html>
