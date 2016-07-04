@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Break - Continue</h1>
+  <ol>
+    <li>Use break to exit a loop</li>
+    <li>Use continue to jump to the next iteration of the loop</li>
+  </ol>
+  <script>
+
+    //if the number < 1, do not print it but just continue to the next iteraton
+    //if the number > 100, exit the loop
+    var numbers = [1, 33, 55, -1, 101, -33, 55];
+
+    var l = numbers.length;
+
+    for(var i = 0; i < l; i++) {
+
+      if(numbers[i] < 0) {
+        continue;
+      }
+
+      if(numbers[i] > 100) {
+        break;
+      }
+
+      console.log(numbers[i]);
+    }
+  </script>
+</body>
+</html>
