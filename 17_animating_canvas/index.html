@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title></title>
+  <style>
+    canvas {border: 1px solid black}
+  </style>
+</head>
+<body>
+  <h1>Animated Canvas</h1>
+  <canvas id="mycanvas" width="500" height="300" ></canvas>
+  <script>
+
+  //requestAnimationFrame is called multiple times pers second and we use it to animate
+  //we put all the position calculations in update()
+  //we put all the drawing code in draw(). The canvas is cleared and re-drawn each time
+
+    //dimensions of the rectangle
+    var x = 10;
+    var y = 10;
+    var w = 20;
+    var h = 30;
+
+    //speed at which it moves, 2 pixels
+    var speed = 2;
+
+    //grab the canvas and context
+    var canvas = document.getElementById("mycanvas");
+    var ctx = canvas.getContext("2d");
+
+    //update the rectangle position, new position will be equal current position plus speed
+    var update = function() {
+      x = x +  speed;
+    };
+
+    //show it on the screen
+    var draw = function() {
+      ctx.clearRect(0,0,500,300);//clean canvas,if not there will be one continuous block across the screen
+      ctx.fillStyle = "rgb(200, 0, 100)";
+      ctx.fillRect(x, y, w, h);
+    };
+
+    //gets executed multiple times per second
+    var step = function() {
+
+      update();
+      draw();
+
+      window.requestAnimationFrame(step);//keeps calling step as it moves from frame to frame
+    };
+
+    //initial kick
+    step();
+
+  </script>
+</body>
+</html>
