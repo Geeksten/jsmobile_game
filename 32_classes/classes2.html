@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>JavaScript Programming | ZENVA.com</title>
+	</head>
+	<body>	
+	<p>Add the name as an argument in the constructor function.</p>
+		
+		<script>
+			//Monster class
+			//constructor method executed each time we create a new instance of monster class
+			var Monster = function(name) {
+				console.log('a new monster is being created');
+				//Math.random is a number between 0 and 1
+				this.energy = Math.random() * 100;
+				this.name = name
+
+				//this would create the method every time a monster is instantiated.
+				//better to just create a method and have all monsters share it
+
+				/*this.roar = function() {
+					console.log('RRROAARR');
+				}*/
+			};
+
+			//Better to have a method that all monsters can share if it is something common to all of them. They all roar
+			Monster.prototype.roar = function() {
+				console.log('RRROAARR');
+			};
+
+			Monster.prototype.getStronger = function() {
+				//this.energy = this.energy * 2;
+				this.energy *=  2;
+			}
+
+			//instances of the class Monster
+			var enemyLevel1 = new Monster("fido");
+			console.log(enemyLevel1.name)
+			var enemyLevel2 = new Monster("arfy");
+			console.log(enemyLevel2.name)
+			var enemyLevel3 = new Monster("snoopy");
+			console.log(enemyLevel3.name)
+			var enemyLevel4 = new Monster("droopy");
+			console.log(enemyLevel4.name)
+		</script>
+	</body>
+</html>
