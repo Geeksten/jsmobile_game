@@ -7,4 +7,4 @@ A javascript mobile game.
 * CSS
 
 ###Screenshot of completed game
-![js_game](/sprites/images/game.png)
+![js_game](/30_sprites/images/game.png)
