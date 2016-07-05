@@ -2,7 +2,7 @@
 A javascript mobile game.
 
 ###Technology Stack
-* Javacsript
+* Javascript
 * HTML
 * CSS
 
