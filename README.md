@@ -5,3 +5,6 @@ A javascript mobile game.
 * Javacsript
 * HTML
 * CSS
+
+###Screenshot of completed game
+![js_game](/sprites/images/game.png)
