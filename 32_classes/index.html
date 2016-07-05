@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>JavaScript Programming | ZENVA.com</title>
+	</head>
+	<body>	
+	<p>Picture a game with a monster.</p>
+	<p>Monster can do different things using methods, eg attack, roar etc</p>
+	<p>If say you want to create 20 or 100 different monsters, you do not want to go through the repetitive process of creating the monster, naming it and assigning methods.</p>
+	<p>Enter Object Orientation.</p>
+	<p>Create a blue print (class) that represents a basic monster, then adjust it based on the different qualities of each individual monster.</p>
+	<ol>
+	<li>Class is a blueprint of a type of object.</li>
+	<li>Instance  of a class is an object created by using the blueprints of the class.</li>
+	<li>To create shared methods between instances, use the prototype object.</li>
+	</ol>
+		
+		<script>
+			//Monster class
+			//constructor method executed each time we create a new instance of monster class
+			var Monster = function() {
+				console.log('a new monster is being created');
+				//Math.random is a number between 0 and 1
+				this.energy = Math.random() * 100;
+
+				//this would create the method every time a monster is instantiated.
+				//better to just create a method and have all monsters share it
+
+				/*this.roar = function() {
+					console.log('RRROAARR');
+				}*/
+			};
+
+			//Better to have a method that all monsters can share if it is something common to all of them. They all roar
+			Monster.prototype.roar = function() {
+				console.log('RRROAARR');
+			};
+
+			Monster.prototype.getStronger = function() {
+				//this.energy = this.energy * 2;
+				this.energy *=  2;
+			}
+
+			//instances of the class Monster
+			var enemyLevel1 = new Monster();
+			var enemyLevel2 = new Monster();
+			var enemyLevel3 = new Monster();
+			var enemyLevel4 = new Monster();
+		</script>
+	</body>
+</html>
